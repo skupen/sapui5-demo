@@ -9,7 +9,7 @@
         
         
 		<ObjectHeader
-			intro="{invoice>ShipperName}"
-			title="{invoice>ProductName}"/>
+			intro="{product>Name}"
+			/>
 	</Page>
 </mvc:View>

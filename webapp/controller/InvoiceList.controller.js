@@ -21,7 +21,7 @@ sap.ui.define([
 			var aFilter = [];
 			var sValue = oEvent.getParameter("newValue");
 			if (sValue) {
-				aFilter.push(new Filter("ProductName", FilterOperator.Contains, sValue));
+				aFilter.push(new Filter("Name", FilterOperator.Contains, sValue));
 			}
 
 			// filter binding
@@ -34,7 +34,7 @@ sap.ui.define([
 			var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail", {
-				invoicePath: window.encodeURIComponent(oItem.getBindingContext("invoice").getPath().substr(1))
+				productPath: window.encodeURIComponent(oItem.getBindingContext("product").getPath().substr(1))
 			});
 		}
 

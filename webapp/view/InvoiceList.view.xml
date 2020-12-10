@@ -8,11 +8,7 @@
       class="sapUiResponsiveMargin"
       width="auto"
       items="{
-         path : 'invoice>/Invoices',
-         sorter : {
-				path : 'ShipperName',
-				group : true
-			}
+         path : 'product>/Products'
       }">
       <headerToolbar>
          <Toolbar>
@@ -23,24 +19,9 @@
       </headerToolbar>
       <items>
          <ObjectListItem
-            title="{invoice>Quantity} x {invoice>ProductName}"
-            number="{
-               parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
-               type: 'sap.ui.model.type.Currency',
-               formatOptions: {
-                  showMeasure: false
-               }
-            }"
-            numberUnit="{view>/currency}"
-            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+            title="{product>Name}"
             type="Navigation"
 				press="onPress">
-            <firstStatus>
-					<ObjectStatus text="{
-						path: 'invoice>Status',
-						formatter: '.formatter.statusText'
-					}"/>
-				</firstStatus>
 			</ObjectListItem>           
       </items>
    </List>

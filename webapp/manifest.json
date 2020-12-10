@@ -10,8 +10,8 @@
         "version": "1.0.0"
       },
       "dataSources": {
-        "invoiceRemote": {
-        "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+        "productRemote": {
+        "uri": "https://services.odata.org/V2/(S(wj1w1ivpd2u1wndvreksridn))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0"
@@ -49,8 +49,8 @@
             "fallbackLocale": ""
           }          
         },
-        "invoice": {
-          "dataSource": "invoiceRemote"
+        "product": {
+          "dataSource": "productRemote"
       }
 	  },
       "resources": {
@@ -76,7 +76,7 @@
           "target": "overview"
         },
         {
-          "pattern": "detail/{invoicePath}",
+          "pattern": "detail/{productPath}",
           "name": "detail",
           "target": "detail"
         }

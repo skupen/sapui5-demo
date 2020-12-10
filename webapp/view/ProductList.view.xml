@@ -1,10 +1,10 @@
 <mvc:View
-   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+   controllerName="sap.ui.demo.walkthrough.controller.ProductList"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <List
-      id="invoiceList"
-      headerText="{i18n>invoiceListTitle}"
+      id="productList"
+      headerText="{i18n>productListTitle}"
       class="sapUiResponsiveMargin"
       width="auto"
       items="{
@@ -12,9 +12,9 @@
       }">
       <headerToolbar>
          <Toolbar>
-            <Title text="{i18n>invoiceListTitle}"/>
+            <Title text="{i18n>productListTitle}"/>
             <ToolbarSpacer/>
-            <SearchField width="50%" liveChange=".onFilterInvoices"/>
+            <SearchField width="50%" liveChange=".onFilterProducts"/>
          </Toolbar>
       </headerToolbar>
       <items>

@@ -12,7 +12,10 @@ sap.ui.define([
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({
 				path: "/" + window.decodeURIComponent(oEvent.getParameter("arguments").productPath),
-				model: "product"
+				model: "product",
+				parameters: {
+                    expand: "Supplier,Category"
+                }
 			});
 		},
 
@@ -27,5 +30,6 @@ sap.ui.define([
 				oRouter.navTo("overview", {}, true);
 			}
 		}
+
 	});
 });

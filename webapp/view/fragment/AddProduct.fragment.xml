@@ -1,0 +1,61 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form" >
+
+    <Dialog id="dialog"
+    title="{i18n>title}"
+    draggable="true"
+    beforeOpen=".onBeforeDialogOpen"
+    afterClose=".onAfterDialogClose"
+    >
+    <form:SimpleForm id="form"
+        editable="true"
+        validateFieldGroup=".onValidateFieldGroup"
+        fieldGroupIds="inputs"
+    >
+        <Label text="{i18n>productName}"/>
+        <Input
+            id="productName"
+            fieldGroupIds="inputs"
+            required="true"
+            value=""
+        ></Input>
+        <Label text="{i18n>productCategory}"></Label>
+        <Select
+            id="categoryName"
+            required="true"
+            forceSelection="false"
+            items="{
+                path: 'product>/Categories',
+                sorter: { path: 'Name' }
+            }">
+            <core:Item text="{product>Name}" />
+        </Select>
+        <Label text="{i18n>productSupplier}"></Label>
+       <Select
+            id="supplierName"
+            required="true"
+            forceSelection="false"
+            items="{
+                path: 'product>/Suppliers',
+                sorter: { path: 'Name' }
+            }">
+            <core:Item text="{product>Name}" />
+        </Select>
+    </form:SimpleForm>
+    <beginButton>
+        <Button id="addButton"
+        text="{i18n>productAdd}"
+        type="Emphasized"
+        press=".onDialogAddPress"
+        />
+    </beginButton>
+    <endButton>
+        <Button id="cancelButton"
+        text="{i18n>productCancel}"
+        press=".onDialogCancelPress"
+        />
+    </endButton>
+    </Dialog>
+</core:FragmentDefinition>

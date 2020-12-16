@@ -11,7 +11,7 @@
       },
       "dataSources": {
         "productRemote": {
-        "uri": "https://services.odata.org/V2/(S(wj1w1ivpd2u1wndvreksridn))/OData/OData.svc/",
+        "uri": "https://services.odata.org/V2/(S(buhefmxp1zti5firqdbzrzch))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0"

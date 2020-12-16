@@ -7,9 +7,9 @@
       showNavButton="true"
 		navButtonPress=".onNavBack"
       >
-      <ObjectHeader 
-      intro="{product>Supplier/Name}"/>
-      <ObjectHeader 
+       <ObjectHeader 
       intro="{product>Category/Name}"/>
+      <ObjectHeader 
+      intro="{product>Supplier/Name}"/>     
 	</Page>
 </mvc:View>

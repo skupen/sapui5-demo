@@ -18,16 +18,23 @@
             <ToolbarSpacer/>
             <SearchField width="50%" liveChange=".onFilterProducts"/>
 				<ToolbarSpacer/>
-            <Button icon="sap-icon://add" id="addDialogButton" type="Transparent" press="onOpenDialog" ariaLabelledBy="addButtonLabel" tooltip="Add"/>
-				<Button icon="sap-icon://edit" type="Transparent" press="onPressEdit" ariaLabelledBy="editButtonLabel" tooltip="Edit"/>          
+            <Button icon="sap-icon://add" id="addDialogButton" type="Transparent" press="onOpenAddDialog" ariaLabelledBy="addButtonLabel" tooltip="Add"/>          
          </Toolbar>
       </headerToolbar>
-      <items>
-         <ObjectListItem
+      <CustomListItem>
+        <HBox 
+         justifyContent="SpaceBetween"
+         alignItems="Center"
+         renderType="Bare"   >
+            <ObjectListItem 
             title="{product>Name}"
             type="Navigation"
-				press="onPress">
-			</ObjectListItem>           
-      </items>
+				press="onPress"
+            class="widthItem"
+            />
+            <Button icon="sap-icon://edit" type="Transparent" press="onPressEdit" tooltip="Edit"/>          
+        </HBox>
+    </CustomListItem>
+
    </List>
 </mvc:View>

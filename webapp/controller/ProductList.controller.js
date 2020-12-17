@@ -58,7 +58,7 @@ sap.ui.define([
 			oModel.remove(sPath);
 		},
 		
-		onOpenDialog: function () {
+		onOpenAddDialog: function () {
 			var oView = this.getView();
 
 			// create dialog lazily
@@ -78,14 +78,13 @@ sap.ui.define([
 			});
 		},
 
-
 		onDialogAddPress: function() {
-			var productNameInput = this.getView().byId("productName").getProperty("value");
-			var categoryInput = this.getView().byId("categoryName").getSelectedItem().getBindingContext("product").getPath();
-			var supplierInput = this.getView().byId("supplierName").getSelectedItem().getBindingContext("product").getPath();
+			var productNameInput = this.getView().byId("productName").getProperty("value"),
+				categoryInput = this.getView().byId("categoryName").getSelectedItem().getBindingContext("product").getPath(),
+				supplierInput = this.getView().byId("supplierName").getSelectedItem().getBindingContext("product").getPath();
 			
-			var oModel = this.getOwnerComponent().getModel("product");
-			var oBindings = oModel.bindList("/Products");
+			var oModel = this.getOwnerComponent().getModel("product"),
+				oBindings = oModel.bindList("/Products");
 
 			// create an entry of the Products collection with the specified properties and values
 			oModel.create("/Products", { 
@@ -118,16 +117,10 @@ sap.ui.define([
 				console.log("Product addition failed!");
 				
 				}});
-			
-			
-			
 		},
 
 		onDialogCancelPress: function() {
 			this.byId("dialog").close();
-		}
-
-		
-		
+		}		
 	});
 });

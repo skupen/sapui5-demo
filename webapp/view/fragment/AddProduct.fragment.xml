@@ -6,8 +6,6 @@
     <Dialog id="dialog"
     title="{i18n>title}"
     draggable="true"
-    beforeOpen=".onBeforeDialogOpen"
-    afterClose=".onAfterDialogClose"
     >
     <form:SimpleForm id="form"
         editable="true"

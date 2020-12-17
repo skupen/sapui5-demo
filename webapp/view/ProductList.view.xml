@@ -18,7 +18,7 @@
             <ToolbarSpacer/>
             <SearchField width="50%" liveChange=".onFilterProducts"/>
 				<ToolbarSpacer/>
-            <Button icon="sap-icon://add" id="addDialogButton" type="Transparent" press="onOpenAddDialog" ariaLabelledBy="addButtonLabel" tooltip="Add"/>          
+            <Button icon="sap-icon://add" id="addDialogButton" type="Transparent" press="onPressAddDialog" ariaLabelledBy="addButtonLabel" tooltip="Add"/>          
          </Toolbar>
       </headerToolbar>
       <CustomListItem>
@@ -32,7 +32,7 @@
 				press="onPress"
             class="widthItem"
             />
-            <Button icon="sap-icon://edit" type="Transparent" press="onPressEdit" tooltip="Edit"/>          
+            <Button icon="sap-icon://edit" type="Transparent" press="onPressEditDialog" tooltip="Edit"/>          
         </HBox>
     </CustomListItem>
 

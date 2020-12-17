@@ -1,21 +1,23 @@
 <core:FragmentDefinition
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:form="sap.ui.layout.form">
-    <Dialog id="addDialog"
-    title="{i18n>addTitle}"
+    xmlns:form="sap.ui.layout.form" >
+    <Dialog 
+    id="editDialog"
+    title="{i18n>editTitle}"
     draggable="true"
-    afterClose="dialogAddAfterClose">
-        <form:SimpleForm id="formAdd"
+    afterClose="dialogEditAfterClose">
+        <form:SimpleForm id="formEdit"
             editable="true">
             <Label text="{i18n>productName}"/>
             <Input
-                id="productNameAdd"
+                id="productNameEdit"
                 required="true"
-                value="" />
+                value="{product>Name}">
+            </Input>
             <Label text="{i18n>productCategory}"/>
             <Select
-                id="categoryNameAdd"
+                id="categoryNameEdit"
                 required="true"
                 forceSelection="false"
                 items="{
@@ -26,7 +28,7 @@
             </Select>
             <Label text="{i18n>productSupplier}"/>
             <Select
-                id="supplierNameAdd"
+                id="supplierNameEdit"
                 required="true"
                 forceSelection="false"
                 items="{
@@ -35,19 +37,17 @@
                 }">
                 <core:Item text="{product>Name}"/>
             </Select>
-        </form:SimpleForm>
+    </form:SimpleForm>
         <beginButton>
-            <Button id="addButton"
-            text="{i18n>productAdd}"
+            <Button id="editButton"
+            text="{i18n>productEdit}"
             type="Emphasized"
-            press=".onDialogAddPress"
-            />
+            press=".onDialogEditPress"/>
         </beginButton>
         <endButton>
-            <Button id="cancelButtonAdd"
+            <Button id="cancelButtonEdit"
             text="{i18n>productCancel}"
-            press=".onAddDialogCancelPress"
-            />
+            press=".onEditDialogCancelPress"/>
         </endButton>
     </Dialog>
 </core:FragmentDefinition>

@@ -35,6 +35,5 @@
             <Button icon="sap-icon://edit" type="Transparent" press="onPressEditDialog" tooltip="Edit"/>          
         </HBox>
     </CustomListItem>
-
    </List>
 </mvc:View>

@@ -50,7 +50,10 @@
           }          
         },
         "product": {
-          "dataSource": "productRemote"
+          "dataSource": "productRemote",
+          "settings": {
+            "defaultBindingMode": "TwoWay"
+          }
       }
 	  },
       "resources": {

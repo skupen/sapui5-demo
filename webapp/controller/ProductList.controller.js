@@ -14,9 +14,15 @@ sap.ui.define([
 		onFilterProducts : function (oEvent) {
 			// build filter array
 			var aFilter = [];
-			var sValue = oEvent.getParameter("newValue");
-			if (sValue) {
-				aFilter.push(new Filter("Name", FilterOperator.Contains, sValue));
+			var sQuery = oEvent.getParameter("newValue");
+			if (sQuery) {
+				var sQueryLower = sQuery.toLowerCase();
+				var sQueryUpper = sQuery.toUpperCase();
+				var sQueryUpLow = sQuery[0].toUpperCase() + sQuery.substr(1).toLowerCase();
+				aFilter.push(new Filter("Name", FilterOperator.Contains, sQuery))
+				aFilter.push(new Filter("Name", FilterOperator.Contains, sQueryLower));
+				aFilter.push(new Filter("Name", FilterOperator.Contains, sQueryUpper));
+				aFilter.push(new Filter("Name", FilterOperator.Contains, sQueryUpLow));
 			}
 
 			// filter binding
@@ -111,7 +117,7 @@ sap.ui.define([
 			var sMsg = oBundle.getText("editMsg");
 			// show message
 			MessageToast.show(sMsg);
-			},		
+			}.bind(this),		
 			error : function(oError) {
 			console.log("Product edit failed!");			
 			}});
@@ -149,7 +155,7 @@ sap.ui.define([
 				var sMsg = oBundle.getText("addMsg");
 				// show message
 				MessageToast.show(sMsg);			
-				},				
+				}.bind(this),				
 				error : function(oError) {	
 				console.log("Product addition failed!");		
 				}});

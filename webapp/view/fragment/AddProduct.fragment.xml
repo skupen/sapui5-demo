@@ -17,7 +17,7 @@
             <Select
                 id="categoryNameAdd"
                 required="true"
-                forceSelection="false"
+                forceSelection="true"
                 items="{
                     path: 'product>/Categories',
                     sorter: { path: 'Name' }
@@ -28,7 +28,7 @@
             <Select
                 id="supplierNameAdd"
                 required="true"
-                forceSelection="false"
+                forceSelection="true"
                 items="{
                     path: 'product>/Suppliers',
                     sorter: { path: 'Name' }

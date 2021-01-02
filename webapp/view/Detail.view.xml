@@ -6,9 +6,14 @@
       title="{i18n>detailPageTitle}"
       showNavButton="true"
 		navButtonPress=".onNavBack">
-       <ObjectHeader 
-      intro="{product>Category/Name}"/>
       <ObjectHeader 
-      intro="{product>Supplier/Name}"/>     
+      title="{product>Name}">
+         <ObjectAttribute
+         title="{i18n>detailPageCategory}" 
+         text="{product>Category/Name}"/>
+         <ObjectAttribute 
+         title="{i18n>detailPageSupplier}" 
+         text="{product>Supplier/Name}"/>  
+      </ObjectHeader>  
 	</Page>
 </mvc:View>
